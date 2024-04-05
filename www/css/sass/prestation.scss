@@ -1,0 +1,161 @@
+
+.unePrestation{
+    margin: 1rem 0.5rem 1rem 0.5rem;
+    height: 20rem;
+    width: 15rem;
+    border:1px solid black;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+    background-color: white;
+    &:hover{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Ombre */
+    }
+    &_img{
+        height: 60%;
+        width: 100%;
+        @include backgroundImage("../img/univers/noImage.png");
+        background-size: contain;
+        border-bottom: 1px solid black;
+    }&_titre{
+        height: 10%;
+        width: 90%;
+        font-weight: bold;
+        font-size: 1.1em;
+        overflow: hidden;
+        white-space: pre-line;
+        text-overflow: ellipsis;
+        line-height: 1;
+        margin: 2.5% 0 3% 0;
+    }&_proprio{
+        font-size: 0.8em;
+        width: 90%;
+        height: 11%;
+        line-height: 1.1;
+        color: gray;
+        &_favori{
+            height: 2rem;
+            width: 2rem;
+            @include backgroundImage("../img/icon/favoriWhite.png");
+            transform: translate(11.75rem,-15.75rem);
+            background-size: cover;
+            &:hover{
+                background-image: url("../img/icon/favoriRed.png");
+            }
+            &_rouge{
+                background-image: url("../img/icon/favoriRed.png");
+            }
+            &_reglage{
+                background-image: url("../img/icon/reglage.png");
+                &:hover{
+                    background-image: url("../img/icon/reglage-2.png");
+                }
+            }
+        }
+    }&_prix{
+        font-size: 1.2em;
+        height: 10%;
+        width: 90%;
+        font-weight: bold;
+        & div{
+            @include backgroundImage("../img/icon/jeton.png");
+            background-size: cover;
+            height: 70%;
+            margin: 0 2% 0 2%;
+            width: 10%;
+        }
+    }&_notation{
+        font-size: 0.5em;
+        height: 8%;
+        width: 90%;
+        &_text{
+            transform: translateY(-0.5rem);
+        }&_complet{
+            @include backgroundImage("../img/icon/etoile.png");
+        }&_vide{
+            @include backgroundImage("../img/icon/etoile-2.png");
+        }&_moitie{
+            @include backgroundImage("../img/icon/etoile-3.png");
+        }
+        & div{
+
+            background-size: cover;
+            height: 61%;
+            width: 7%;
+            margin: 0% 1% 0% 1%;
+            color: $primary;
+            font-size: 2.5em;
+        }& p{
+            margin: 0 0 0 4%;
+            color: gray;
+            font-size: 1.75em;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1160px) {
+    .unePrestation{
+        margin: 0.5rem 0.2rem 0.5rem 0.2rem;
+        height: 14rem;
+        width: 9rem;
+        &_titre{
+            
+            font-size: 0.7em;
+        }&_proprio{
+            font-size: 0.6em;
+            &_favori{
+                height: 1.5rem;
+                width: 1.5rem;
+                transform: translate(6.75rem,-11rem);
+                &:hover{
+                    background-image: url("../img/icon/favoriRed.png");
+                }
+            }
+        }&_prix{
+            font-size: 0.7em;
+        }&_notation{
+            font-size: 0.3em;
+            height: 8%;
+            & div{
+                height: 61%;
+                width: 8.75%;
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .unePrestation{
+        margin: 0.5rem 0.1rem 0.5rem 0.1rem;
+        height: 15rem;
+        width: 10.5rem;
+        &_titre{
+            font-size: 0.7em;
+        }&_proprio{
+            font-size: 0.6em;
+            &_favori{
+                height: 1.75rem;
+                width: 1.75rem;
+                transform: translate(7.8rem,-11.75rem);
+                &:hover{
+                    background-image: url("../img/icon/favoriRed.png");
+                }
+            }
+        }&_prix{
+            font-size: 0.7em;
+        }&_notation{
+            font-size: 0.3em;
+            height: 8%;
+            & div{
+                height: 61%;
+                width: 8.75%;
+                background-size: contain;
+            }
+        }
+    }
+}
+
+
+

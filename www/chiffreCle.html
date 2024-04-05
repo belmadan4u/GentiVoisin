@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="./css/app.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <title>GentiVoisin</title>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/chroma-js@2.1.0/chroma.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+   
+</head>
+<body>
+    <div id="header">
+        <div class="container-fluid d-flex flex-column justify-content-center header">
+          <div class="d-flex flex-row justify-content-between header_haut  align-items-center">
+               <a class="header_haut_logo" href="index.html">
+                  <div></div>
+               </a>
+               <div class=" align-items-center header_haut_recherche" >
+                     <input type="text" placeholder="Trouver un matériel ou un service" id="edt_recherche">  
+                     <div class="header_haut_recherche_rechercher"></div>
+                     <div class="header_haut_recherche_supprimer"></div>
+               </div>
+               <div class="d-flex flex-row justify-content-around align-items-center header_haut_icons">
+                  <div class="header_haut_icons_notif"><div></div></div>
+                  <div class="header_haut_icons_fav"></div>
+                  <div class=" header_haut_icons_compte">
+                  </div>
+                  <div class="header_haut_icons_nav"></div>
+               </div>
+          </div>
+          <div class=" flex-row justify-content-center align-items-center header_bas">
+              
+              <div>SERVICE</div>
+              <div>MATERIEL</div>
+  
+          </div>    
+          
+          </div>
+  
+       <div class="d-flex align-items-center navigation">
+  
+          <!---  PORTABLE -->
+          <div class="navigation_gauche">
+              <a class=" flex-row justify-content-start align-items-center">
+                  LES SERVICES
+              </a>
+              <a class=" flex-row justify-content-start align-items-center">
+                  REVOLORISÉS
+              </a>
+              <a class="flex-row justify-content-start align-items-center">
+                  NOUVEAUTÉS
+              </a>
+          </div>
+          <div class="flex-column align-items-center navigation_droite">
+              <div class=" flex-row justify-content-between align-items-center navigation_droite_haut">
+                  <div>
+                      CATEGORIE
+                  </div>
+                  <div class="navigation_droite_haut_croix"></div>
+              </div>
+              <div class="d-flex flex-column flex-wrap navigation_droite_bas">
+                  
+              </div>
+          </div>
+  
+          <!---  MOBILE  -->
+  
+          <div class=" align-items-center navigation_recherche" >
+              <input type="text" placeholder="Trouver un matériel ou un service" id="edt_rechercheMobile">  
+              <div class="navigation_recherche_rechercher"></div>
+              <div class="navigation_recherche_supprimer"></div>
+          </div>
+          <a  href="recherche.html?nouveaute=true"
+              class=" align-items-center justify-content-between navigation_titre" >
+              <div >NOUVEAUTÉS</div>
+              <div class="navigation_titre_img"></div>
+          </a>
+          <a  href="recherche.html?revalorise=true"
+              class=" align-items-center justify-content-between navigation_titre" >
+              <div>REVALORISÉS</div>
+              <div class="navigation_titre_img"></div>
+          </a>
+          <a  href="recherche.html?type=service"
+              class=" align-items-center justify-content-between navigation_titre" >
+              <div >SERVICES</div>
+              <div class="navigation_titre_img"></div>
+          </a>
+          <a  href="recherche.html?type=materiel"
+              class=" align-items-center justify-content-between navigation_titre" >
+              <div >MATÉRIELS</div>
+              <div class="navigation_titre_img"></div>
+          </a>
+        </div>
+      </div>
+    <div class="d-flex h-80vh w-100  chiffreCle">
+        <div class="d-flex flex-column justify-content-between flex-fill chiffreCle_gauche p-4">
+            <div class="border-2 p-3 bg-white rounded chiffreCle_gauche_haut d-flex align-items-center h2 ">
+                <button  type="button" data-bs-toggle="offcanvas" data-bs-target="#demo"> </button> <span class="p-3">Administration</span>
+            </div>
+            <div class="d-flex flex-column align-items-center border-2 bg-white rounded chiffreCle_gauche_bas">
+                <div class="d-flex  bg-white chiffreCle_gauche_bas_partie">
+                    <div class="border-3 pt-2 p-3 bg-white chiffreCle_gauche_bas_chiffre">
+                        <div>GentiVoisin</div><div class="h4"></div>
+                    </div>
+                    <div class=" pt-2 p-3 bg-white chiffreCle_gauche_bas_chiffre">
+                        <div>Annonces</div><div class="h4"></div> 
+                    </div>
+                    <div class=" pt-2 p-3 bg-white chiffreCle_gauche_bas_chiffre">
+                        <div>Transactions</div><div class="h4"></div>
+                    </div>
+                    <div class=" pt-2 p-3 bg-white chiffreCle_gauche_bas_chiffre">
+                        <div>Jetons</div><div class="h4"></div>
+                    </div>
+                </div>
+                
+                <div class="loader"></div>
+            </div>
+           
+        </div>
+        <div class="d-flex flex-column justify-content-between flex-fill p-4 chiffreCle_milieu" >
+            <div class="d-flex flex-column justify-content-center border-2 p-2 bg-white rounded chiffreCle_milieu_chiffre">
+                <div>Taux d’acceptation des demandes</div>
+                <div></div>
+            </div>
+            <div class="d-flex flex-column justify-content-center border-2 p-2 bg-white rounded chiffreCle_milieu_chiffre">
+                <div>Durée moyenne d'une transaction</div>
+                <div></div>
+            </div>
+            <div class="d-flex flex-column justify-content-center border-2  p-2 bg-white rounded chiffreCle_milieu_chiffre">
+                <div>Prix moyen d'une transaction</div>
+                <div></div>
+            </div>
+            <div class="d-flex flex-column justify-content-center border-2 p-2 bg-white rounded chiffreCle_milieu_chiffre">
+                <div>Frais de départ moyen</div>
+                <div></div>
+            </div>
+            <div class="d-flex flex-column justify-content-center border-2 p-2 bg-white rounded chiffreCle_milieu_chiffre">
+                <div>Prix journalier moyen</div>
+                <div></div>
+            </div>
+        </div>
+        <div class="d-flex flex-column justify-content-between flex-fill p-4 chiffreCle_droite" >
+            <div class="flex-fill border-2 mb-3 p-3 bg-white rounded chiffreCle_droite_haut">
+                <div class="d-flex chiffreCle_droite_titre">
+                    LOCALISATION DES ANNONCES
+                </div>
+                <div id="carte" class="flex-fill border-2 mt-3 p-3 bg-white rounded chiffreCle_droite_localisation">
+                    <div class="loader"></div>
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center flex-fill border-2 mt-3 p-3 bg-white rounded chiffreCle_droite_bas">
+                <div class="d-flex chiffreCle_droite_titre">
+                    RÉPARTITION DES PRÉSTATIONS
+                </div>
+                <div class="loader"></div>
+            </div>
+        </div>
+    </div>
+      
+
+    <div class="offcanvas offcanvas-start" id="demo">
+        <div class="offcanvas-header">
+          <h1 class="offcanvas-title">Administration </h1>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <a href="chiffreCle.html" style="text-decoration: none;">
+                <div class="d-flex align-items-center p-3 navigationAdmin bg-primaryy rounded ">
+                    <div class="statistiqueB"></div>
+                    Statistiques
+                </div>
+            </a>
+            <a href="GentiVoisin.html" style="text-decoration: none;">
+                <div class="d-flex align-items-center p-3 navigationAdmin " style="text-decoration: none;">
+                    <div class="compte"></div>
+                    Les GentiVoisins
+                </div>
+             </a>
+            <a href="GentiVoisinValidation.html" style="text-decoration: none;">
+                <div class="d-flex align-items-center p-3 navigationAdmin " style="text-decoration: none;">
+                    <div class="action"></div>
+                    Actions
+                </div>
+            </a>
+            <a href="Prestation.html" style="text-decoration: none;">
+                <div class="d-flex align-items-center p-3 navigationAdmin " >
+                    <div class="prestation"></div>
+                    Les Prestations
+                </div>
+            </a>
+            <a href="Categorie.html" style="text-decoration: none;">
+                <div class="d-flex align-items-center p-3 navigationAdmin " >
+                    <div class="categorie"></div>
+                    Les Catégories
+                </div>
+            </a>
+            
+            <a href="Valorisation.html" style="text-decoration: none;">
+                <div class="d-flex align-items-center p-3 navigationAdmin navigationAdmin_dernier" >
+                    <div class="gestion"></div>
+                    Valorisation
+                </div>
+            </a>
+
+            <a href="lesAdministrateurs.html" style="text-decoration: none;">
+                <div class="d-flex align-items-center p-3 navigationAdmin navigationAdmin_dernier" >
+                    <div class="administration"></div>
+                    Les administrateurs
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+      
+    <div id="footer">
+    <div class="d-flex flex-column justify-content-center align-items-center footer">
+        <div class="d-flex justify-content-center align-items-center footer_logo">
+        </div>
+        <div class="d-flex flex-row justify-content-between align-items-center footer_titre">
+            <div ></div>
+            <div>
+                GentiVoisin
+            </div>
+            <div></div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center footer_navigation">
+            <a  class="flex-fill"
+                href="index.html">
+                ACCUEIL 
+            </a>
+            <a  class="flex-fill"
+                href="recherche.html?type=service">
+                SERVICES 
+            </a>
+            <a   class="flex-fill"
+                href="recherche.html?type=materiel">
+                 MATÉRIELS
+            </a>
+            <a  class="flex-fill"
+                >
+                CONNEXION 
+            </a>
+            <a  class="flex-fill"
+                href="favori.html">
+                FAVORIS 
+            </a>
+            <a  class="flex-fill"
+                href="notification.html">
+                NOTIFICATIONS
+            </a>
+            <a  class="flex-fill"
+                href="contact.html">
+                CONTACT 
+            </a>
+            <a  class="flex-fill"
+                href="mentionsLegales.html">
+                MENTIONS LÉGALES
+            </a>
+        </div>
+    </div>
+</div>
+    <script src="./js/chiffreCle.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+</html>

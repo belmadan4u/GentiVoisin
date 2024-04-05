@@ -1,0 +1,26 @@
+@mixin backgroundImage($url: $string ){
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url($url);
+}
+
+.blanc{
+    color:white;
+    & a:visited{
+        color:white;
+        
+    }
+}
+
+
+.img{
+    &_navigation{
+        background-image: url("../img/navigation.png");
+    }
+    &_compte{
+        background-image: url("../img/compte.png");
+    }
+    &_compteActuel{
+        background-image: url("../img/compteActuel.png");
+    }
+}

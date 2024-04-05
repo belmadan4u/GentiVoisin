@@ -1,0 +1,353 @@
+
+
+.header{
+    height: 7rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre */
+    background-color: rgb(255, 255, 255);
+    z-index: 200 ;
+    position: relative;
+    &_haut{
+        height: 4,9rem;
+        z-index: 5;
+        &_logo {
+            width: 20%;
+            height: 200%;
+            @include backgroundImage("../img/Logo/logoTexte.png");
+            background-size: contain;
+            overflow: visible;
+        }&_recherche{
+            display: flex;
+            width: 60%;
+            & input{
+                border:1px solid lightgray;
+                height: 2.5rem;
+                width: 96.75%;
+                border-radius: 20px;
+                padding-left: 7.5%;
+                &:focus{
+                    border: 1px solid $primary;
+                    outline: 0;
+                    animation: rechercheAnim 0.25s ease-in-out 0s 1  forwards;
+                }
+                &:focus:focus-visible {
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre */
+                }
+            }
+            &_rechercher{
+                cursor: pointer;
+                position: absolute;
+                height: 1.5rem;
+                width: 1.5rem;
+                transform:translateX(1.25rem);
+                @include backgroundImage("../img/icon/recherche.png");
+                background-size: cover;
+            }&_supprimer{
+                cursor: pointer;
+                border:1px solid $primary;
+                height: 2.5rem;
+                width: 2.5rem; 
+                border-radius: 50%;
+                transform:translateX(0) scale(0,0);
+                @include backgroundImage("../img/icon/close.png");
+                background-size: 30%;
+                &:hover{
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre */
+                }
+            }
+
+        }&_icons{
+            width: 15%;
+        
+            &_notif,&_fav,&_compte,&_nav{
+                cursor: pointer;
+                height: 2rem;
+                width: 2rem;
+                background-size: 60%;
+                border-radius: 50%;
+                padding: 10%
+            }
+
+            &_notif{
+                @include backgroundImage("../img/icon/notification.png");
+                transform-origin: top;
+            }&_fav{
+                @include backgroundImage("../img/icon/favori.png");
+                background-size: 80%;
+            }&_compte{
+                @include backgroundImage("../img/icon/compte/deconnecte.png");
+                & :nth-child(n){
+                    border-radius: 50%;
+                    height: 0.5rem;
+                    width: 0.5rem;
+                    margin: 0.25rem 0 0 0.25rem;
+                }
+            }&_nav{
+                @include backgroundImage("../img/icon/nav.png");
+                display: none;
+
+            }&_notif:hover,&_fav:hover,&_compte:hover,&_nav:hover{
+                background-color: $hover;
+            }
+            &_fav:hover{
+                background-image: url("../img/icon/favoriRed.png");
+            }&_notif:hover{
+                background-image: url("../img/icon/bell.png");
+                animation: notification 2s ease-in-out infinite ;
+            }
+
+        }
+    }
+    &_bas{
+        margin-top: 0.5%;
+        display: flex;
+        height: 2,1rem;
+        & div{
+            font-size: 0.8em;
+            @include backgroundImage("../img/icon/flecheBas.png");
+            background-position:  100% center;
+            cursor: pointer;
+        }& :nth-child(1){
+            background-size: 15%;
+            width: 5rem;
+            margin-right:2rem ;
+        }& :nth-child(2){
+            background-size: 15%;
+            width: 5rem;
+            margin-left:2rem ;
+        }
+
+    }
+}
+
+.navigation{
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.2); /* Ombre */
+    height: 17.5rem;
+    width: 100%;
+    z-index: 2;
+    margin-top: 0.5rem;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    transform-origin: top;
+    position: absolute;
+    transform:translateY(-20rem);
+    background-color: white;
+    &_gauche{
+        height: 100%;
+        border-right:1px solid black;
+        width: 20%;
+        & a{
+            display: flex;
+            font-size: 1.5rem;
+            height: 33%;
+            width: 100%;
+            padding-left: 10%;
+            color: $colorTexte;
+            text-decoration: none;
+        }& :nth-child(1), & :nth-child(2){
+            border-bottom:1px solid black;
+        }
+    }&_droite{
+        height: 100%;
+        width: 80%;
+        &_haut{
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 30%;
+            padding: 0% 0% 0 2%;
+            font-size: 1.5rem;
+            &_croix{
+                cursor: pointer;
+                z-index: 100;
+                position: absolute;
+                right: 2rem;
+                height: 1rem;
+                width: 1rem;
+                transform: translateY(-1rem);
+                @include backgroundImage("../img/icon/close-2.png");
+                background-size: cover;
+            }
+        }&_bas{
+            width: 100%;
+            height: 70%;
+            padding-left: 2%;
+            font-size: 1.2em;
+            & a{
+                width: 16.5%;
+                padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+                color: $colorTexte;
+                text-decoration: none;
+            }
+        }
+    }&_recherche{
+        width: 90%;
+        overflow:visible;
+        display: none !important;
+        & input{
+            border:1px solid lightgray;
+            height: 2.5rem;
+            width: 100%;
+            border-radius: 20px;
+            padding-left: 12.5%;
+            &:focus{
+                border: 1px solid $primary;
+                outline: 0;
+                animation: rechercheAnim 0.25s ease-in-out 0s 1  forwards;
+            }
+            &:focus:focus-visible {
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre */
+            }
+        }
+        &_rechercher{
+            position: absolute;
+            height: 1.5rem;
+            width: 1.5rem;
+            transform:translateX(0.75rem);
+            @include backgroundImage("../img/icon/recherche.png");
+            background-size: cover;
+        }&_supprimer{
+            position: absolute;
+            right: 10vw;
+            border:1px solid $primary;
+            height: 2.5rem;
+            width: 2.5rem; 
+            border-radius: 50%;
+            transform:translateX(0) scale(0,0);
+            @include backgroundImage("../img/icon/close.png");
+            background-size: 30%;
+            &:hover{
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre */
+            }
+        }
+    }
+
+    &_titre{
+        display: none !important;
+        margin: 0.5% 0 0.5% 0;
+        width: 95%;
+        padding: 0 2.5% 0 2.5%;
+        border-radius: 20px;
+        height: 20%;
+        color: black;
+        text-decoration: none;
+        font-size: 1.5em;
+        font-weight: 400;
+        &_img{
+            height: 1rem;
+            width: 1rem;
+            @include backgroundImage("../img/icon/flecheBas.png");
+            background-size: cover;
+            transform: rotate(-90deg);
+        }
+    }
+}
+
+.rechercheAnimationVersion2{
+    &:not(:focus){
+        animation: rechercheAnimV2 0.5s ease-in-out 1  forwards;
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 1160px) {
+    .header{
+        height: 5.5rem;
+        padding-bottom: 0.5rem;
+        &_haut{
+            height: 4rem;
+            &_recherche{
+                & input{
+                    height: 2rem;
+                    font-size: 0.8em;
+                }
+                &_rechercher{
+                    height: 1rem;
+                    width: 1rem;
+                    transform:translateX(1rem);
+                }&_supprimer{
+                    height: 2rem;
+                    width: 2rem; 
+                }
+            }&_icons{
+                &_notif,&_compte{
+                    background-size: 70%;
+                }
+            }
+        }
+        &_bas{
+            height: 1rem;
+        }
+    }
+
+    .navigation{
+        height: 15rem;
+        &_gauche{
+            & a{
+                font-size: 1.1em;
+
+            }
+        }&_droite{
+            &_haut{
+
+                font-size: 1.1rem;
+                &_croix{
+                    right: 1rem;
+                }
+            }&_bas{
+                font-size: 1em;
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .header{
+        height: 5rem;
+        border-bottom: 1px solid black;
+        &_haut{
+            height: 5rem;
+            
+            &_logo {
+                width: 50%
+            }&_recherche{
+                display: none !important;
+            }&_icons{
+                width: 40%;
+                height: 100%;
+                &_nav{
+                    background-size: 80%;
+                    display: block;
+                }
+            }
+        }
+        &_bas{
+            display: none !important;
+        }
+    }
+
+    .navigation{
+        height: 14rem;
+        margin-top: 0.15rem;
+        border-top: none;
+        border-bottom:1px solid black;
+
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items:center !important;
+        &_gauche{
+            display: none;
+
+        }&_droite{
+            display: none !important;
+
+        }&_recherche,&_titre{
+            display: flex !important;
+        }
+    }
+    
+}
+
+
+

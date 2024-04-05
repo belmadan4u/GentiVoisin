@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+
+body{
+    background-color: #ffffff;
+    height: auto;
+    width: 100%;
+    margin: 0;
+}
+
+@import 'sass/variable';
+@import 'sass/utile';
+@import 'sass/animation';
+
+@import 'sass/prestation';
+@import 'sass/commentaire';
+@import 'sass/lesEtoiles';
+@import 'sass/navigationAdmin';
+
+@import 'sass/header';
+@import 'sass/footer';
+@import 'sass/contact';
+
+@import 'sass/accueil';
+@import 'sass/recherche';
+@import 'sass/pagePrestation';
+@import 'sass/gentiVoisin';
+@import 'sass/transaction';
+@import 'sass/chiffreCle';
+@import 'sass/lesAdministrateurs';
+
+
+
+

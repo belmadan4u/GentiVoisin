@@ -1,0 +1,75 @@
+.navigationAdmin{
+    border-top:2px solid $primary; 
+    font-size: 1.2em;
+    @include backgroundImage("../img/icon/flecheDroite.png");
+    background-size: 5%;
+    background-position: 95% center;
+    color:black;
+    text-decoration: none;
+    &_dernier{
+        border-bottom:2px solid $primary; 
+    }& div{
+        height: 5vh;
+        width: 5vh;
+        margin-right: 1rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+.bg-primaryy{
+    background-color: $primary ;
+    color: white;
+    background-image: url("../img/icon/flecheBlanche.png");
+}
+
+.statistique{
+    background-image: url("../img/icon/statistiques.png");
+}
+.statistiqueB{
+    background-image: url("../img/icon/statistiquesBlanc.png");
+}
+
+.prestation{
+    background-image: url("../img/icon/prestations.png");
+}
+.prestationB{
+    background-image: url("../img/icon/prestationsBlanc.png");
+}
+
+.categorie{
+    background-image: url("../img/icon/categories.png");
+}
+.categorieB{
+    background-image: url("../img/icon/categories-2.png");
+}
+
+
+.action{
+    background-image: url("../img/icon/action.png");
+}
+.actionB{
+    background-image: url("../img/icon/actionBlanc.png");
+}
+
+.compte{
+    background-image: url("../img/icon/compte.png");
+}
+.compteB{
+    background-image: url("../img/icon/compteBlanc.png");
+}
+
+.gestion{
+    background-image: url("../img/icon/jetonVide.png");
+}
+.gestionB{
+    background-image: url("../img/icon/jetonBlanc.png");
+}
+
+.administration{
+    background-image: url("../img/icon/administration.png");
+}
+.administrationB{
+    background-image: url("../img/icon/administrateurB.png");
+}

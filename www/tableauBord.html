@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tableau de bord</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/tableauBord.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <body>
+    <div id="header">
+      <div class="container-fluid d-flex flex-column justify-content-center header">
+        <div class="d-flex flex-row justify-content-between header_haut  align-items-center">
+             <a class="header_haut_logo" href="index.html">
+                <div></div>
+             </a>
+             <div class=" align-items-center header_haut_recherche" >
+                   <input type="text" placeholder="Trouver un matériel ou un service" id="edt_recherche">  
+                   <div class="header_haut_recherche_rechercher"></div>
+                   <div class="header_haut_recherche_supprimer"></div>
+             </div>
+             <div class="d-flex flex-row justify-content-around align-items-center header_haut_icons">
+                <div class="header_haut_icons_notif"><div></div></div>
+                <div class="header_haut_icons_fav"></div>
+                <div class=" header_haut_icons_compte">
+                </div>
+                <div class="header_haut_icons_nav"></div>
+             </div>
+        </div>
+        <div class=" flex-row justify-content-center align-items-center header_bas">
+            
+            <div>SERVICE</div>
+            <div>MATERIEL</div>
+
+        </div>    
+        
+        </div>
+
+     <div class="d-flex align-items-center navigation">
+
+        <!---  PORTABLE -->
+        <div class="navigation_gauche">
+            <a class=" flex-row justify-content-start align-items-center">
+                LES SERVICES
+            </a>
+            <a class=" flex-row justify-content-start align-items-center">
+                REVOLORISÉS
+            </a>
+            <a class="flex-row justify-content-start align-items-center">
+                NOUVEAUTÉS
+            </a>
+        </div>
+        <div class="flex-column align-items-center navigation_droite">
+            <div class=" flex-row justify-content-between align-items-center navigation_droite_haut">
+                <div>
+                    CATEGORIE
+                </div>
+                <div class="navigation_droite_haut_croix"></div>
+            </div>
+            <div class="d-flex flex-column flex-wrap navigation_droite_bas">
+                
+            </div>
+        </div>
+
+        <!---  MOBILE  -->
+
+        <div class=" align-items-center navigation_recherche" >
+            <input type="text" placeholder="Trouver un matériel ou un service" id="edt_rechercheMobile">  
+            <div class="navigation_recherche_rechercher"></div>
+            <div class="navigation_recherche_supprimer"></div>
+        </div>
+        <a  href="recherche.html?nouveaute=true"
+            class=" align-items-center justify-content-between navigation_titre" >
+            <div >NOUVEAUTÉS</div>
+            <div class="navigation_titre_img"></div>
+        </a>
+        <a  href="recherche.html?revalorise=true"
+            class=" align-items-center justify-content-between navigation_titre" >
+            <div>REVALORISÉS</div>
+            <div class="navigation_titre_img"></div>
+        </a>
+        <a  href="recherche.html?type=service"
+            class=" align-items-center justify-content-between navigation_titre" >
+            <div >SERVICES</div>
+            <div class="navigation_titre_img"></div>
+        </a>
+        <a  href="recherche.html?type=materiel"
+            class=" align-items-center justify-content-between navigation_titre" >
+            <div >MATÉRIELS</div>
+            <div class="navigation_titre_img"></div>
+        </a>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card mb-3 shadow bordure">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn" role="button" style="text-align: left">
+              <div class="card-body">
+                <img
+                  src="./img/coin.svg"
+                  style="width: 30px"
+                  class="mb-2"
+                  alt=""
+                />
+                <h5 class="card-title">Mes jetons</h5>
+                <p class="card-text">
+                  Vous êtes en possession de <b id="nbJetons"></b> jetons.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3 shadow bordure">
+            <a
+              href="./parametreCompte.html"
+              class="btn"
+              role="button"
+              style="text-align: left"
+            >
+              <div class="card-body">
+                <img
+                  src="./img/gear.svg"
+                  style="width: 30px"
+                  alt=""
+                  class="mb-2"
+                />
+                <h5 class="card-title">Parametres du compte</h5>
+                <p class="card-text">
+                  Visualisez et modifiez les paramètres de votre compte.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3 shadow bordure">
+            <a href="gererMesAnnonces.html" class="btn" role="button" style="text-align: left">
+              <div class="card-body">
+                <img
+                  src="./img/card-list.svg"
+                  style="width: 30px"
+                  alt=""
+                  class="mb-2"
+                />
+                <h5 class="card-title">Gérer mes annonces</h5>
+                <p class="card-text">
+                  Visualisez vos annonces en cours et modifier-les à tout
+                  instant.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3 shadow bordure">
+            <a href="transaction.html" class="btn" role="button" style="text-align: left">
+              <div class="card-body">
+                <img
+                  src="./img/arrow-left-right.svg"
+                  style="width: 30px"
+                  alt=""
+                  class="mb-2"
+                />
+                <h5 class="card-title">Mes transactions</h5>
+                <p class="card-text">Visualisez vos transactions.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3 shadow bordure">
+            <a
+              href="./mesDemandes.html"
+              class="btn"
+              role="button"
+              style="text-align: left"
+            >
+              <div class="card-body">
+                <img
+                  src="./img/man.png"
+                  style="width: 30px"
+                  alt=""
+                  class="mb-2"
+                />
+                <h5 class="card-title">Mes demandes</h5>
+                <p class="card-text">
+                  Visualisez et effectuez de nouvelles demandes.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-5 shadow bordure">
+            <a
+              href="./index.html"
+              class="btn"
+              role="button"
+              style="text-align: left"
+              onclick="deleteAllCookies()"
+            >
+              <div class="card-body">
+                <img
+                  src="./img/door-open.svg"
+                  style="width: 30px"
+                  alt="image porte"
+                  class="mb-2"
+                />
+                <h5 class="card-title">Déconnexion</h5>
+                <p class="card-text">Se deconnecter de GentiVoisin.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col" id="divAdmin">
+        <div class="card mb-5 shadow bordure">
+          <a href="chiffreCle.html" class="btn" role="button"
+            ><div class="card-body">
+              <img
+                src="./img/shield.png"
+                style="width: 30px"
+                alt=""
+                class="mb-2"
+              />
+              <h5 class="card-title">Administrateur</h5>
+              <p class="card-text">
+                Acceder à des fonctionnalités supplémentaires réservés
+                aux administrateurs.
+              </p>
+            </div></a
+          >
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+    <div class="d-flex flex-column justify-content-center align-items-center footer">
+        <div class="d-flex justify-content-center align-items-center footer_logo">
+        </div>
+        <div class="d-flex flex-row justify-content-between align-items-center footer_titre">
+            <div ></div>
+            <div>
+                GentiVoisin
+            </div>
+            <div></div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center footer_navigation">
+            <a  class="flex-fill"
+                href="index.html">
+                ACCUEIL 
+            </a>
+            <a  class="flex-fill"
+                href="recherche.html?type=service">
+                SERVICES 
+            </a>
+            <a   class="flex-fill"
+                href="recherche.html?type=materiel">
+                 MATÉRIELS
+            </a>
+            <a  class="flex-fill"
+                >
+                CONNEXION 
+            </a>
+            <a  class="flex-fill"
+                href="favori.html">
+                FAVORIS 
+            </a>
+            <a  class="flex-fill"
+                href="notification.html">
+                NOTIFICATIONS
+            </a>
+            <a  class="flex-fill"
+                href="contact.html">
+                CONTACT 
+            </a>
+            <a  class="flex-fill"
+                href="mentionsLegales.html">
+                MENTIONS LÉGALES
+            </a>
+        </div>
+    </div>
+</div>
+    <script src="./js/tableauBord.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+  </body>
+</html>

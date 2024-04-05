@@ -1,0 +1,19 @@
+#visible1,
+#visible2,
+#visible3 {
+  background-image: url("../img/eye-slash.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#photoProfil {
+  max-width: 150px;
+  max-height: 150px;
+  width: 20vw;
+  height: 20vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border-radius: 100%;
+}

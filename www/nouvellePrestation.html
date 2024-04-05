@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/nouvellePrestation.css">
+  <link rel="stylesheet" href="./css/app.css">
+  <title>Nouvelle prestation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+  <div id="header">
+    <div class="container-fluid d-flex flex-column justify-content-center header">
+      <div class="d-flex flex-row justify-content-between header_haut  align-items-center">
+           <a class="header_haut_logo" href="index.html">
+              <div></div>
+           </a>
+           <div class=" align-items-center header_haut_recherche" >
+                 <input type="text" placeholder="Trouver un matériel ou un service" id="edt_recherche">  
+                 <div class="header_haut_recherche_rechercher"></div>
+                 <div class="header_haut_recherche_supprimer"></div>
+           </div>
+           <div class="d-flex flex-row justify-content-around align-items-center header_haut_icons">
+              <div class="header_haut_icons_notif"><div></div></div>
+              <div class="header_haut_icons_fav"></div>
+              <div class=" header_haut_icons_compte">
+              </div>
+              <div class="header_haut_icons_nav"></div>
+           </div>
+      </div>
+      <div class=" flex-row justify-content-center align-items-center header_bas">
+          
+          <div>SERVICE</div>
+          <div>MATERIEL</div>
+
+      </div>    
+      
+      </div>
+
+   <div class="d-flex align-items-center navigation">
+
+      <!---  PORTABLE -->
+      <div class="navigation_gauche">
+          <a class=" flex-row justify-content-start align-items-center">
+              LES SERVICES
+          </a>
+          <a class=" flex-row justify-content-start align-items-center">
+              REVOLORISÉS
+          </a>
+          <a class="flex-row justify-content-start align-items-center">
+              NOUVEAUTÉS
+          </a>
+      </div>
+      <div class="flex-column align-items-center navigation_droite">
+          <div class=" flex-row justify-content-between align-items-center navigation_droite_haut">
+              <div>
+                  CATEGORIE
+              </div>
+              <div class="navigation_droite_haut_croix"></div>
+          </div>
+          <div class="d-flex flex-column flex-wrap navigation_droite_bas">
+              
+          </div>
+      </div>
+
+      <!---  MOBILE  -->
+
+      <div class=" align-items-center navigation_recherche" >
+          <input type="text" placeholder="Trouver un matériel ou un service" id="edt_rechercheMobile">  
+          <div class="navigation_recherche_rechercher"></div>
+          <div class="navigation_recherche_supprimer"></div>
+      </div>
+      <a  href="recherche.html?nouveaute=true"
+          class=" align-items-center justify-content-between navigation_titre" >
+          <div >NOUVEAUTÉS</div>
+          <div class="navigation_titre_img"></div>
+      </a>
+      <a  href="recherche.html?revalorise=true"
+          class=" align-items-center justify-content-between navigation_titre" >
+          <div>REVALORISÉS</div>
+          <div class="navigation_titre_img"></div>
+      </a>
+      <a  href="recherche.html?type=service"
+          class=" align-items-center justify-content-between navigation_titre" >
+          <div >SERVICES</div>
+          <div class="navigation_titre_img"></div>
+      </a>
+      <a  href="recherche.html?type=materiel"
+          class=" align-items-center justify-content-between navigation_titre" >
+          <div >MATÉRIELS</div>
+          <div class="navigation_titre_img"></div>
+      </a>
+    </div>
+  </div>
+  <form action="nouvellePrestation.html" id="form">
+  <div class="main">
+    <div class="container">
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+      <h1 class="text-center" id="titreEtape">Commençons par l'essentiel !</h1>
+    </div>
+    <div class="step active">
+      <fieldset class="container mt-5 mb-5 overflow-auto sectionChoix">
+        <legend>Type et catégories de votre prestation</legend>
+        <p>Une bonne catégorisation aidera à rendre votre annonce plus visible et à attirer les bonnes personnes !</p>
+        <div class="container .fixed-size mt-3">
+          <div class="row">
+            <div class="col-5">
+              <select id="typePrestation" name="prestation" class="form-select overflow-auto" aria-label="Default select example">
+                <option selected value="">Choississez le type de prestation</option>
+                <option value="service">Service</option>
+                <option value="materiel">Matériel</option>
+              </select>
+              <span class="error-type"></span>
+            </div>
+            <div class="col-5">
+              <select id="categorie" name="categorie" class="form-select" aria-label="Default select example">
+                <option selected value="">Choississez la catégorie</option>
+              </select>
+              <span class="error-categorie"></span>
+            </div>
+            <div class="col-2">
+              <button type="button" class="btn btn-primary" onclick="ajoutCategorieSelect()">Ajouter</button>
+            </div>
+          </div>
+          <div id="categSelect">
+            <ul id="categSelectListe"></ul>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="container  sectionDuree mt-5 mb-5">
+        <legend>Durée de votre prestation</legend>
+        <div class="container text-center mt-5 mb-5">
+          <div class="row temps">
+            <div class="col-4 heure">Temps en heure de votre prestation :</div>
+            <div class="col-3 inputTime">
+              <input type="time" class="form-control" id="duree" />
+              <i class="bi bi-clock"></i>
+            </div>
+          </div>
+          <span class="error-heure"></span>
+        </div>
+      </fieldset> 
+      <fieldset class="container overflow-auto sectionMateriel mt-5 mb-5">
+        <legend>Information sur votre matériel</legend>
+        <div class="container text-center mt-5 mb-5" id="zoneMateriel">
+          <div class="row">
+            <div class="col">
+              <div class="input-group pr-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Marque</span>
+                <input type="text" id="marque" name="marque" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <span class="error-marque"> </span>
+            </div>
+            <div class="col">
+              <div class="input-group ">
+                <span class="input-group-text" id="inputGroup-sizing-default">Modèle</span>
+                <input type="text" id="modele" name="modele" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <span class="error-modele"> </span>
+            </div>
+            <div class="col">
+              <div class="input-group ">
+                <span class="input-group-text" id="inputGroup-sizing-default">Hauteur (en cm)</span>
+                <input type="text" id="taille" name="taille" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <span class="error-taille"></span>
+            </div>
+        </div>
+      </fieldset> 
+    </div>
+    <div class="step">
+      <fieldset class="container sectionDescription mt-5 mb-5 ">
+        <legend>Commencez à rendre service dès aujourd'hui !</legend>
+        <p>Plus votre description est détaillée, plus de personnes s'arracheront votre prestation !</p>
+        <div class="mt-3 mb-3">
+          <label for="libelle" class="label">Titre :</label>
+          <input type="text" class="form-control mt-2" name="libelle" id="libelle" required minlength="6" maxlength="50" placeholder="Titre de la prestation..."></textarea>
+          <span class="error-libelle"></span>
+        </div>
+        <div class="mt-3 mb-5">
+          <label for="description" class="label">Description :</label>
+          <textarea class="form-control mt-2" name="description" id="description" cols="10" rows="5" required minlength="10" maxlength="200" placeholder="Description de la prestation..."></textarea>
+          <span class="error-description"></span>
+        </div>
+      </fieldset>
+    </div>
+    <div class="step">
+      <fieldset class="container overflow-auto sectionImage mt-5 mb-5 ">
+        <legend>Ajoutez des images</legend>
+        <p>Des images de haute qualité peuvent faire toute la différence pour attirer l'attention de tous !</p>
+        <div class="container text-center mt-5 mb-5">
+          <div class="row">
+            <div class="col">
+              <div class="input-group">
+                <input type="file" accept="image/*" class="form-control" id="fichierImage" onchange="ajoutImage(event)" name="image" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                <button class="btn btn-outline-secondary" type="button" id="effacer">Effacer</button>
+              </div>
+              <span class="error-image"></span>
+            </div>
+          </div>
+        </div> 
+        <div class="container" id="imageContainer"></div>
+      </fieldset> 
+    </div>
+    <div class="container divBtn">
+      <div class="row">
+        <div class="col-auto">
+          <button type="button" class="btn btn-danger" id="annuler">Annuler</button>
+        </div>
+        <div class="col-auto btnRetour">
+          <button type="button" class="btn btn-primary" id="retour">Retour</button>
+        </div>
+        <div class="col-auto btnValider">
+          <button type="button" class="btn btn-success" id="valider">Suivant</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </form>
+  <div id="footer">
+    <div class="d-flex flex-column justify-content-center align-items-center footer">
+        <div class="d-flex justify-content-center align-items-center footer_logo">
+        </div>
+        <div class="d-flex flex-row justify-content-between align-items-center footer_titre">
+            <div ></div>
+            <div>
+                GentiVoisin
+            </div>
+            <div></div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center footer_navigation">
+            <a  class="flex-fill"
+                href="index.html">
+                ACCUEIL 
+            </a>
+            <a  class="flex-fill"
+                href="recherche.html?type=service">
+                SERVICES 
+            </a>
+            <a   class="flex-fill"
+                href="recherche.html?type=materiel">
+                 MATÉRIELS
+            </a>
+            <a  class="flex-fill"
+                >
+                CONNEXION 
+            </a>
+            <a  class="flex-fill"
+                href="favori.html">
+                FAVORIS 
+            </a>
+            <a  class="flex-fill"
+                href="notification.html">
+                NOTIFICATIONS
+            </a>
+            <a  class="flex-fill"
+                href="contact.html">
+                CONTACT 
+            </a>
+            <a  class="flex-fill"
+                href="mentionsLegales.html">
+                MENTIONS LÉGALES
+            </a>
+        </div>
+    </div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="./js/nouvellePrestation.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+</html>

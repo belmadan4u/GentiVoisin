@@ -1,0 +1,16 @@
+
+$colorTexte: #333333;
+
+$primary : #095518;
+$secondary : rgb(244, 198, 2);
+$third : #87C35B;
+
+$error: #990000;
+$hover: #09551825;
+
+$shadow-color: rgba(0, 0, 0, 0.1);
+$box-shadow: 0 0 0 0.2rem $shadow-color;
+
+.text-primary{
+    color:$primary !important;
+}

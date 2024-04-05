@@ -1,0 +1,119 @@
+.commentaire{
+    &_lesNotes{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        &_uneNote{
+            margin: 0.25rem 0 0 0;
+            height: 1.5rem;
+            width: 90%;
+            &_total{
+                width:85%;
+                background-color: rgb(226, 226, 226);
+                border-radius: 50px;
+                height: 50%;
+                & div{
+                    height: 100%;
+                    width: 0%;
+                    background-color: $secondary;
+                    border-radius: 50px;
+                }
+            }
+        }
+    }
+    &_separation{
+        width: 100%;
+        border: 1.5px solid $primary;
+        margin: 2rem 0 2rem 0;
+    }&_unCommentaire{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1.5px solid $primary;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        &_proprio{
+            height: 7rem;
+            width: 100%;
+            cursor: pointer;
+            &_photo{
+                height: 5rem;
+                width: 5rem;
+                @include backgroundImage("../img/univers/noImage.png");
+                background-size: cover;
+                border-radius: 50%;
+                margin-right: 3rem;
+            }&_titre{
+                font-size: 1.4em;
+                font-weight: bold;
+            }&_date{
+               color : rgb(110, 110, 110);
+               font-size: 1.1em;
+            }
+            
+        }&_note{
+            height: 2.5rem;
+            &_complet{
+                @include backgroundImage("../img/icon/etoile.png");
+            }&_vide{
+                @include backgroundImage("../img/icon/etoile-2.png");
+            }&_moitie{
+                @include backgroundImage("../img/icon/etoile-3.png");
+            }& div{
+                background-size: cover;
+                height: 1rem;
+                width: 1rem;
+                margin: 0% 0.5% 0% 0.5%;
+                color: $primary; 
+            }
+        }&_description{
+            margin-bottom: 1rem;
+            width: 95%;
+        }
+    }
+
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 1160px) {
+    .commentaire{
+        &_lesNotes{
+            &_uneNote{
+               font-size: 0.8em;
+            }
+        }
+        &_separation{
+            margin: 1rem 0 1rem 0;
+        }&_unCommentaire{
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            &_proprio{
+                height: 5rem;
+                &_photo{
+                    height: 3.5rem;
+                    width: 3.5rem;
+                    margin-right: 1.5rem;
+                }&_titre{
+                    font-size: 1em;
+                }&_date{
+                   font-size: 0.8em;
+                }
+                
+            }&_note{
+                height: 1.5rem;
+                & div{
+                    height: 0.75rem;
+                    width:  0.75rem;
+                }
+            }&_description{
+                font-size: 0.8em;
+                margin-bottom: 0.5rem;
+            }
+        }
+    
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+}

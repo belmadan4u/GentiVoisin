@@ -1,0 +1,58 @@
+section {
+
+    height: auto;
+    max-height: auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 30px;
+    visibility: hidden;
+}
+
+
+#notif {
+    text-align: center;
+    margin: 40px;
+}
+
+.astext {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+}
+
+
+
+
+.active {
+    background-color: #eaf0ed; /* Couleur bleue par exemple */
+    color: #fff; /* Couleur du texte en blanc */
+    opacity: 100%;
+}
+
+
+@media (max-width: 576px) { 
+
+
+    #notif {
+        font-size: 20px;
+    }
+
+}
+
+
+@media (max-width: 344px) { 
+
+
+    #notif {
+        font-size: 15px;
+    }
+
+}

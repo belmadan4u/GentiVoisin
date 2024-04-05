@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+i:hover {
+  color: #058240;
+  transition: all 0.3s ease;
+}
+
+.table-hover tbody tr:hover td {
+  background-color: #095518;
+  color: white;
+}
+.table-hover tbody tr:hover th {
+  background-color: #095518;
+  color: white;
+}
+.container-table{
+  display: flex;
+  justify-content: center;
+}
+.table{
+  width: 70vw;
+}
+
+td,
+tr {
+  border-bottom: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.btn-group .btn {
+  background-color: white;
+  border: solid 0.2px black;
+}
+
+.btn-group {
+  background-color: #095518;
+  color: white;
+  border: 1px solid black;
+}
+
+.form-control {
+  width: 60vw;
+  border: 3px solid #058240;
+}
+
+.bannir {
+  background-color: red;
+}
+.bannir:hover {
+  background-color: red;
+}
+.valider, .voir-annonces {
+  background-color: #f3c301;
+}
+.valider:hover, .voir-annonces:hover {
+  background-color: #f3c301;
+}
+.small {
+  font-size: 0.8rem;
+}
+.big {
+  font-size: 1.5rem;
+}
+
+.mf-bannir {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.mf-bannir button {
+  width: 48%;
+}
+
+
+.titre{
+  margin: 5vh 5vw;
+  padding: 10px;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+

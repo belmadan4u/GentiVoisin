@@ -1,0 +1,109 @@
+.gentiVoisin{
+    border-bottom:4px solid lightgray;
+    height: 18rem;
+    margin: 1rem 4% 0% 4%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    &_photo{
+        height: 12.5rem;
+        width: 12.5rem;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-right: 2.5%;
+    }&_contenu{
+        
+        margin-left: 2.5%;
+    }&_nom{
+        font-weight: bold;
+        font-size: 1.7em;
+        margin: 0.25rem 0 0.25rem;
+    }&_annonceTransaction{
+        width: 15rem;
+        font-size: 1.2em;
+        color:rgb(71, 71, 71);
+    }&_uneInfo{
+        height: 3rem;
+        font-size: 1.1em;
+        padding-left: 2.5rem;
+        background-size: 8%;
+        background-position: left center;
+        background-repeat: no-repeat;
+    }
+    
+    &_note{
+        height: 2rem;
+        &_complet{
+            @include backgroundImage("../img/icon/etoile.png");
+        }&_vide{
+            @include backgroundImage("../img/icon/etoile-2.png");
+        }&_moitie{
+            @include backgroundImage("../img/icon/etoile-3.png");
+        }& div{
+            background-size: cover;
+            height: 1.5rem;
+            width: 1.5rem;
+            margin: 0% 1% 0% 1%;
+            color: $primary; 
+            @include backgroundImage("../img/icon/etoile.png");
+        }& span{
+            margin-left: 1rem;
+        }
+    }&_lesTitres{
+        margin: 0% 4% 0% 4%;
+        height: 4rem;
+        & div{
+            width: 30%;
+            font-size: 1.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }& :nth-child(3){
+            position: absolute;
+            width: 27.35vw;
+            height: 4rem;
+            transform: translate(-50%,-4px);
+            border-top: 4px solid $primary;
+            
+        }
+    }
+}
+
+@keyframes gentiVoisinAGauche {
+    0%{
+        transform:translate(-50%,-4px);
+    }100%{
+        transform:translate(50%,-4px);
+    }
+}
+
+@keyframes gentiVoisinADroite {
+    0%{
+        transform:translate(50%,-4px);
+    }100%{
+        transform:translate(-50%,-4px);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .gentiVoisin{
+        flex-direction: column !important;
+        height: auto;
+        margin: 1rem 2% 0% 2%;
+        &_contenu{
+            margin-bottom: 1rem;
+        }
+       
+        &_lesTitres{
+            & div{
+                width: 50%;
+            }& :nth-child(3){
+                width: 50%;
+            }
+        }
+    }
+}
+
+
+
+

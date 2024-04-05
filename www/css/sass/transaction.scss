@@ -1,0 +1,289 @@
+.transaction{
+    width: 92%;
+    height: 16rem;
+    padding: 0.5rem 1rem 1rem 1rem;
+    margin: 1rem 0 1rem 0 ;
+    border-radius: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 1px solid black;
+    &:hover{
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); /* Ombre */
+    }
+    &_titre{
+        height: 15%;
+        font-size: 1.4em;
+        font-weight: bold;
+    }&_contenu{
+        height: 85%;
+        &_photo{
+            height: 100%;
+            width: 25%;
+            @include backgroundImage("../img/univers/noImage.png");
+            background-size: contain;
+            background-position: left;
+        }&_information{
+            height: 100%;
+            width: 45%;
+
+            &_propNote{
+                width: 100%;
+                height: 20%;
+                &_proprio{
+                    &_image{
+                        @include backgroundImage("../img/univers/noImage.png");
+                        border-radius: 50%;
+                        height: 2rem;
+                        width: 2rem;
+                        background-size: cover;
+                        margin-right: 0.5rem;
+                    }&_perso{
+                        font-size: 0.8em;
+                        color:rgb(88, 88, 88);
+                        & div{
+                            height: 50%
+                        }
+                    }
+                }&_note{
+                    &_complet{
+                        @include backgroundImage("../img/icon/etoile.png");
+                    }&_vide{
+                        @include backgroundImage("../img/icon/etoile-2.png");
+                    }&_moitie{
+                        @include backgroundImage("../img/icon/etoile-3.png");
+                    }& div{
+                        background-size: contain;
+                        height: 1.5rem;
+                        width: 1.5rem;
+                        margin: 0% 2% 0% 2%;
+                        color: $primary;
+                    }
+                }
+            }&_statDate{
+                width: 100%;
+                height: 15%;
+                font-size: 0.9em;
+                &_futur{
+                    background-color: $third;
+                }&_passe{
+                    background-color: $error;
+                }&_enCours{
+                    background-color: orange;
+                }&_statut :nth-child(1){
+                    height: 1rem;
+                    width: 1rem;
+                    border-radius: 50%;
+                    margin-right: 0.5rem;
+                }
+            }&_lesDates{
+                width: 100%;
+                height: 20%;
+                border-top: 1.5px solid $primary;
+                border-bottom: 1.5px solid $primary;
+                font-size: 0.9em;
+            }&_frais{
+                width: 100%;
+                height: 15%;
+                color:$primary;
+                & :nth-child(2){
+                    padding-right: 7%;
+                    @include backgroundImage("../img/icon/jeton.png");
+                    background-size: 1.25rem;
+                    background-position: 98% center;
+                }
+            }&_total{
+                width: 100%;
+                height: 15%;
+                font-size: 1.4em;
+                font-weight: bold;
+                & :nth-child(2){
+                    padding-right: 7%;
+                    @include backgroundImage("../img/icon/jeton.png");
+                    background-size: 1.25rem;
+                    background-position: 98% center;
+                }
+            }
+        }&_bouton{
+            height: 100%;
+            width: 25%;
+            &_normal{
+                background-color: #f2f2f238;
+            }
+            &_modifier{
+                background-color:#f4c80243;
+                &:hover{
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); /* Ombre */
+                }
+            }&_refuser{
+                background-color: #99000044;
+                &:hover{
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); /* Ombre */
+                }
+            }&_accepte{
+                background-color: #09551834;
+                &:hover{
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); /* Ombre */
+                }
+            }& div{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 15%;
+                width: 100%;
+                margin: 2.5% 0 2.5% 0;
+                border-radius: 5px;
+                border: 1px solid black;
+                &:hover{
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); /* Ombre */
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 1160px) {
+    .transaction{
+        width: 100%;
+        height: 14rem;
+        &_titre{
+            font-size: 1.2em;
+        }&_contenu{
+            &_information{
+                &_propNote{
+                    &_proprio{
+                        &_image{
+                            height: 1.5rem;
+                            width: 1.5rem;
+                        }&_perso{
+                            font-size: 0.5em;
+                        }
+                    }&_note{
+                        & div{
+                            height: 1rem;
+                            width: 1rem;
+                        }
+                    }
+                }&_statDate{
+                    font-size: 0.7em;
+                    &_connecte{
+                        background-color: $third;
+                    }&_deconncte{
+                        background-color: $error;
+                    }&_enCours{
+                        background-color: orange;
+                    }&_statut :nth-child(1){
+                        height: 0.75rem;
+                        width: 0.75rem;
+                    }
+                }&_lesDates{
+                    font-size: 0.7em;
+                }&_frais{
+                    font-size: 0.8em;
+                    & :nth-child(2){
+                        padding-right: 8%;
+                        background-size: 1rem;
+                    }
+                }&_total{
+                    font-size: 1.2em;
+                    & :nth-child(2){
+                        padding-right: 8%;
+                        background-size: 1rem;
+                    }
+                }
+            }&_bouton{
+
+                & div{
+                   font-size: 0.8em;
+                    height: 15%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .transaction{
+        width: 100%;
+        height: 23rem;
+        padding: 0.5rem 1rem 1rem 1rem;
+        margin: 1rem 0 1rem 0 ;
+        &_titre{
+            height: 3rem;
+            font-size: 1.2em;
+            text-align: center;
+        }&_contenu{
+            
+            height: auto;
+            flex-wrap: wrap;
+            &_photo{
+                height: 15rem;
+                width: 45%;
+            }&_information{
+                height: 15rem;
+                width: 52%;
+                &_propNote{
+                    &_proprio{
+                        &_image{
+                            height: 1.5rem;
+                            width: 1.5rem;
+                            margin-right: 0.25rem;
+                        }&_perso{
+                            font-size: 2vw;
+                        }
+                    }&_note{
+                        & div{
+                            height:3vw;
+                            width: 3vw;
+                        }
+                    }
+                }&_statDate{
+                    font-size: 2vw;
+                    &_statut :nth-child(1){
+                        height: 2vw;
+                        width: 2vw;
+                    }
+                }&_lesDates{
+                    font-size: 2.5vw;
+                }&_frais{
+                    font-size: 0.8em;
+                    & :nth-child(2){
+                        padding-right: 10%;
+                        background-size: 1rem;
+                    }
+                }&_total{
+                    font-size: 4vw;
+                    & :nth-child(2){
+                        padding-right:10%;
+                        background-size: 1rem;
+                    }
+                }
+            }&_bouton{
+                height: 2rem;
+                width: 100%;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                margin: 1rem 0 1rem 0;
+                & div{
+                    height: 100%;
+                    width: 30%;
+                   font-size: 2vw;
+                }
+            }
+        }
+    }
+
+}
+
+.nouvPres{
+    height: 3rem;
+    @include backgroundImage("../img/icon/add.png");
+    background-size: 10%;
+    background-position: 5% center;
+    padding-left: 15%;
+    font-size: 0.9em;
+    color: black;
+    text-decoration: none;
+}

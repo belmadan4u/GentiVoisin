@@ -1,0 +1,137 @@
+.border-2{
+    border:1px solid black !important;
+}
+
+.border-3{
+    border-top:2px solid $secondary !important;
+}
+
+.chiffreCle{
+    height: 84vh;
+    &_gauche{
+        width: 55%;
+
+        &_haut{
+            height: 11%;
+            & button{
+                @include backgroundImage("../img/icon/nav.png");
+                background-size: contain;
+                height: 10vh;
+                width: 10vh;
+                max-height: 4rem;
+                border:2px solid rgba(0, 0, 0, 0);
+                background-color: rgba(0, 0, 0, 0);
+            }
+            &:hover{
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre */
+            }
+        }&_bas{
+            overflow-y: scroll;
+            overflow-x: hidden;
+            height: 85%;
+            &_partie{
+                height: 15%;
+                width: 100%;
+            }
+            &_chiffre{
+                width: 25%;
+                height: 100%;
+            }
+            &:hover{
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre */
+            }& canvas{
+                border:1px solid black;
+                height: 80%;
+                width: 95%;
+            }
+        }
+    }&_milieu{
+        width: 15%;
+        &_chiffre{
+            height: 17%;
+            &:hover{
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre */
+            }& :nth-child(1){
+                font-size: 0.7em;
+                text-align: center;
+            }& :nth-child(2){
+                text-align: center;
+                font-size: 1.4em;
+            }
+        }
+    }&_droite{
+        width: 30%;
+        &_haut{
+            height: 48%;
+            &:hover{
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre */
+            }
+        }&_bas{
+            height: 48%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            &:hover{
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre */
+            }
+        }
+        &_localisation{
+            height: 80%;
+            &:hover{
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre */
+            }
+        }& canvas{
+            width: 20rem;
+            &:hover{
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Ombre */
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 1160px) {
+    .chiffreCle{
+       &_milieu{
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            &_chiffre{
+                margin: 0 !important;
+            }
+       }
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .chiffreCle{
+        height: auto;
+        flex-direction: column !important;
+        &_gauche{
+            height: 80vh;
+            width: 100%;
+        }&_milieu{
+            flex-direction: row !important;
+            justify-content: space-around !important;
+            flex-wrap: wrap;
+            height: 30vh;
+            width: 100%;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            &_chiffre{
+                height: 40%;
+                width: 30%;
+                margin: 0 !important;
+                font-size: 0.8em;
+            }
+        }&_droite{
+            width:100%;
+            height: 90vh;
+        }
+    }    
+}
+
+
+
+
+

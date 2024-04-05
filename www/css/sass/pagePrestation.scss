@@ -1,0 +1,483 @@
+
+.pagePrestation{
+    &_presentation{
+        height: 84vh;
+        width: 100%;
+        padding:2% 4% 0% 5.5%;
+        &_lesImages{
+            height: 100%;
+            width: 40%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: left;
+            &_uneImage{
+                cursor: pointer;
+                height: 5rem;
+                width: 5rem;
+                border-radius: 10px;
+                border:1px solid $primary;
+                @include backgroundImage("../img/univers/noImage.png");
+                background-size: cover;
+                transform: translateX(-50%);
+                margin: 0.5rem 0 0.5rem 0;
+                opacity: 0.5;
+                &:hover{
+                    opacity: 1 !important;
+                }
+            }& :nth-child(1){
+                opacity: 1;
+            }&_favori{
+                position: absolute;
+                height: 3rem;
+                width: 3rem;
+                @include backgroundImage("../img/icon/favoriWhite.png");
+                transform: translate(1vw,-35vh);
+                background-size: cover;
+                cursor: pointer;
+                &:hover{
+                    background-image: url("../img/icon/favoriRed.png");
+                }
+                &_rouge{
+                    background-image: url("../img/icon/favoriRed.png");
+                    
+                }
+            }
+        }&_lesInfos{
+            height: 100%;
+            width: 57.5%;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            &_titre{
+                height: 10%;
+                font-size: 1.5em;
+                color: black;
+                font-family: Arial, Helvetica, sans-serif;
+            }&_lesCategories{
+                font-size: 1em;
+            }&_frais{
+                height: 15%;
+
+                &_unFrais{
+                    margin-right: 5%;
+                    & :nth-child(1){
+                        color: gray;
+                        font-size: 0.8em;
+                    }& :nth-child(2){
+                        font-weight: bold;
+                        font-size: 1.3em;
+                        & div{
+                            height: 1.25rem;
+                            width: 1.25rem;
+                            margin-left: 1.8rem;
+                            @include backgroundImage("../img/icon/jetonVide.png");
+                            background-size: contain;
+                        }
+                    }
+                }
+            }&_proprio{
+                text-decoration: none;
+                color: $colorTexte;
+                height: 20%;
+                width: 100%;
+                border-bottom: 1.5px solid $primary;
+                border-top: 1.5px solid $primary;
+                @include backgroundImage("../img/icon/flecheDroite.png");
+                background-size: 1.5rem;
+                background-position: 98% center;
+                &_photo{
+                    height: 14vh;
+                    width: 14vh;
+                    @include backgroundImage("../img/univers/noImage.png");
+                    background-size: cover;
+                    border-radius: 50%;
+                    margin-right: 3rem;
+                }&_nom{
+                    font-size: 1.4em;
+                    font-weight: bold;
+                }&_annonce{
+                   color : darkgray;
+                   font-size: 1.1em;
+                }&_note{
+                    &_complet{
+                        @include backgroundImage("../img/icon/etoile.png");
+                    }&_vide{
+                        @include backgroundImage("../img/icon/etoile-2.png");
+                    }&_moitie{
+                        @include backgroundImage("../img/icon/etoile-3.png");
+                    }& div{
+                        background-size: cover;
+                        height: 1rem;
+                        width: 1rem;
+                        margin: 0% 1% 0% 1%;
+                        color: $primary;
+                        
+                    }& span{
+                        margin-left: 0.5rem;
+                    }
+                }
+            }&_lesDates{
+                width: 100%;
+                border-bottom: 1.5px solid $primary;
+                margin-bottom: 2rem;
+                overflow-y: scroll;
+                height: 4rem;
+                
+                &_titre{
+                    cursor: pointer;
+                    height: 4rem;
+                    width: 100%;
+                    @include backgroundImage("../img/icon/flecheBas.png");
+                    background-size: 1rem;
+                    background-position: 98% center;
+                    z-index: 2;
+                    background-color: rgb(255, 255, 255);
+                }&_input{
+                    height: 3rem;
+                    display: flex;
+                    z-index: 1;
+                    & input{
+                        margin: 0% 0.5rem 0 0.5rem;
+                        border-radius: 5px;
+                        border:1px solid lightgray;
+                        height: 1.75rem;
+                        &:hover{
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Ombre */
+                        }&:focus{
+                            box-shadow: 0 0 10px $primary; /* Ombre */
+                            outline: 0;
+                        }
+                    }& div{
+                        height: 2rem;
+                        width: 2rem;
+                        @include backgroundImage("../img/icon/close.png");
+                        background-size: 30%;
+                        border-radius: 50%;
+                        border:1px solid $primary;
+                        &:hover{
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Ombre */
+                        } 
+                    }
+                }
+            }&_total{
+                color: $primary;
+                width: 50%;
+                height: 5%;
+                & :nth-child(2){
+                    padding-right: 7%;
+                    @include backgroundImage("../img/icon/jeton.png");
+                    background-size: 1.25rem;
+                    background-position: 98% center;
+                }
+            }&_somme{
+                font-weight: bold;
+                font-size: 1.4em;
+                width: 50%;
+                height: 5%;
+                & :nth-child(2){
+                    padding-right: 7%;
+                    @include backgroundImage("../img/icon/jeton.png");
+                    background-size: 1.25rem;
+                    background-position: 98% center;
+                }
+            }&_valider{
+                animation: fadeIn ease-in 4;
+                cursor: pointer;
+                margin: 1rem 0 1rem 0;
+                height: 9%;
+                width: 50%;
+                background-color: $primary;
+                color: white;
+                font-family: Arial, Helvetica, sans-serif;
+                border-radius: 5px;
+                font-size: 0.9em;
+                &:hover{
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Ombre */
+                }
+            }
+        }
+    }&_bas{
+        height: 100vh;
+        width: 100%;
+        padding: 2% 8% 2% 8%;
+        &_block{
+            width: 45%;
+            &_titre{
+                height: 4rem;
+                color: black;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1.6em;
+            }&_description{
+                font-size: 0.9em;
+            }&_carte{
+                border:2px solid black;
+                width: 100%;
+                height:  60vh;
+            }
+        }
+    }&_decouvrir{
+        border-bottom: 2px solid $primary;
+        border-top: 2px solid $primary;
+        height: 35rem;
+        width: 100%;
+        padding: 4% 1rem 4% 1rem;
+        margin-bottom: 1rem;
+        background :linear-gradient(to bottom, rgb(244, 188, 2,0.05), rgb(135, 195, 91,0.08));
+        &_titre{
+            height: 5rem;
+            padding: 0% 2% 0% 2%;
+            &_texte{
+                font-size: 2em;
+            }&_voirPlus{
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: 1.5em;
+                padding-right: 3%;
+                @include backgroundImage("../img/icon/fleche.png");
+                background-size: 2rem;
+                background-position: 98% center;
+                color: BLACK;
+                text-decoration: none;
+            }
+        }&_lesAnnonces{
+            height: 22rem;
+            overflow: hidden;
+        }
+    }
+}
+
+@keyframes dateMontrer {
+    0%{
+        height: 4rem;
+    }100%{
+        height: 7rem;
+    }
+}
+
+@keyframes dateCacher {
+    0%{
+        height: 7rem;
+    }100%{
+        height: 4rem;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1160px) {
+    #alert,.alert{
+        height: 8% !important;
+        font-size: 0.8em;
+
+    }
+
+    .pagePrestation{
+        &_presentation{
+            padding:1% 1% 0% 2%;
+            &_lesImages{
+                &_uneImage{
+                    height: 3rem;
+                    width: 3rem;
+                    transform: translateX(-25%);
+                }&_favori{
+                    height: 2rem;
+                    width: 2rem;
+                }
+            }&_lesInfos{
+                width: 58%;
+                &_titre{
+                    font-size: 1.2em;
+                }&_lesCategories{
+                    font-size: 0.8em;
+                }&_frais{
+                    &_unFrais{
+                        & :nth-child(1){
+                            font-size: 0.7em;
+                        }& :nth-child(2){
+                            font-size: 1em;
+                            & div{
+                                height: 1rem;
+                                width: 1rem;
+                                margin-left: 1rem;
+                            }
+                        }
+                    }
+                }&_proprio{
+                    background-size: 1rem;
+                    &_photo{
+                    }&_nom{
+                        font-size: 0.9em;
+                    }&_annonce{
+                       font-size: 0.7em;
+                    }&_note{
+                        & div{
+                            background-size: cover;
+                            height: 0.75rem;
+                            width: 0.75rem;
+                        }
+                    }
+                }&_lesDates{
+                    height: 2rem; // A MODIFIER
+                    
+                    &_titre{
+                        height: 2rem;
+                    }&_input{
+                        height: 2rem;
+                        font-size: 0.8em;
+                        & input{
+                            height: 1.25rem;
+                            width: 25%;
+                        }& div{
+                            height: 1.5rem;
+                            width: 1.5rem;
+                        }
+                    }
+                }&_total{
+                    width: 75%;
+                    & :nth-child(2){
+                        background-size: 1rem;
+                    }
+                }&_somme{
+                    font-size: 1.2em;
+                    width: 75%;
+                    & :nth-child(2){
+                        background-size: 1rem;
+                    }
+                }&_valider{
+                    margin: 0.25rem 0 0.25rem 0;
+                    width: 50%;
+                    font-size: 0.6em;
+                    &:hover{
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Ombre */
+                    }
+                }
+            }
+        }&_decouvrir{
+            height: 21rem;
+            padding: 4% 0.5rem 4% 0.5rem;
+            margin-bottom: 0.5rem;
+            &_titre{
+                height: 3rem;
+                &_texte{
+                    font-size: 1.5em;
+                }&_voirPlus{
+                    font-size: 1.2em;
+                    padding-right: 6%;
+                }
+            }&_lesAnnonces{
+                height: 15rem;
+                overflow: hidden;
+            }
+        }
+    }
+    
+    @keyframes dateMontrer {
+        0%{
+            height: 2rem;
+        }100%{
+            height: 4rem;
+        }
+    }
+    
+    @keyframes dateCacher {
+        0%{
+            height: 4rem;
+        }100%{
+            height: 2rem;
+        }
+    }
+
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .pagePrestation{
+        &_presentation{
+            height: auto;
+            flex-direction: column !important;
+            padding:2% 2% 0% 2%;
+            &_lesImages{
+                height: 50vh;
+                width: 95%;
+                &_uneImage{
+                    height: 4rem;
+                    width: 4rem;
+                    transform: translateX(-25%);
+                }&_favori{
+                    transform: translate(76vw,-21vh);
+                }
+            }&_lesInfos{
+                height: auto;
+                width:100%;
+                &_titre{
+                    height: 2rem;
+                    font-size: 2em;
+                }&_lesCategories{
+                    font-size: 1.25em;
+                }&_frais{
+                    height: 4.5rem;
+                   
+                }&_proprio{
+                    height: 6rem;
+                    &_photo{
+                        height: 4rem;
+                        width: 4rem;
+                    }
+                }&_lesDates{
+                   &_input{
+                        & input{
+                            width: 40%;
+                        }
+                    }
+                }&_total{
+                    width: 90%;
+                    margin: 0% 5% 0% 5%;
+                }&_somme{
+                    width: 90%;
+                    margin: 0% 5% 0% 5%;
+                 
+                }&_valider{
+                    margin: 1rem 5% 1rem 5%;
+                    height: 3rem;
+                    width: 90%;
+                    font-size: 0.9em;
+                }
+            }
+        }&_bas{
+            
+            height: auto;
+            width: 100%;
+            padding: 2% 3% 2% 3%;
+            flex-direction: column !important;
+            &_block{
+                width: 100%;
+                &_description{
+                    margin-bottom: 1rem;
+                }
+                &_carte{
+                    border:2px solid black;
+                    width: 100%;
+                    height:  50vh;
+                    margin-bottom: 1rem;
+                }
+            }
+        }&_decouvrir{
+            height: 21rem;
+            padding: 2% 2% 2% 2%;
+            margin-bottom: 1rem;
+            &_titre{
+                height: 3rem;
+                &_texte{
+                    font-size: 1em;
+                }&_voirPlus{
+                    font-size: 0.8em;
+                    padding-right: 6%;
+                    background-size: 1rem;
+                }
+            }&_lesAnnonces{
+                height: 17rem;
+            }
+        }
+    }
+    
+}
+
+
+
+

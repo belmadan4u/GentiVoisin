@@ -1,0 +1,358 @@
+
+body {
+    height: auto;
+    width: 100%;
+    margin: 0;
+    overflow-x: none;
+}
+
+#form {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.main {
+    max-width: 1750px; 
+    width: 100%; 
+    margin: 0 auto; 
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-radius: 1%;
+    border: 1px solid black;
+}
+
+.sectionChoix {
+
+    height: 25vh;
+    max-height: auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.sectionDescription {
+
+    height: 30vh;
+    max-height: auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.sectionImage {
+    height: 35vh;
+    max-height: auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.sectionMateriel {
+    height: 15vh;
+    max-height: auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.sectionDuree {
+    height: 9vh;
+    max-height: auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.bouttons {
+    text-align: right;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+#description {
+    resize: none;
+}
+
+
+
+span {
+    color: rgb(255, 60, 60);
+    font-weight: 300;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#output {
+    border: black 1px solid;
+}
+
+#imageContainer {
+    display: flex;
+    /*flex-wrap: wrap;*/
+    gap: 10px; /* Espacement entre les images */
+    overflow-x: auto; /* Défilement vertical */
+    max-width: 2000px; /* Hauteur maximale pour activer le défilement */
+}
+
+.image-item { /* Largeur fixe pour chaque image */
+    height: 200px; /* Hauteur automatique pour conserver les proportions */
+    position: relative; /* Pour positionner le bouton de suppression en dessous de l'image */
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pour redimensionner l'image tout en conservant les proportions */
+}
+
+.btnSuppImg {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#categSelect {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid black;
+    padding: 5px;
+    margin-top: 10px;
+    display: none;
+    background-color: white;
+    border-radius: 5px ;
+}
+
+#categSelect ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#categSelect li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#btnSuppCateg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 3px 6px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btnValider, .btnRetour {
+    text-align: right;
+}
+
+
+@media (max-width: 576px) { 
+
+    .main {
+        border: none;
+
+    }
+
+    .sectionMateriel {
+        height: 30vh;
+        border-radius: 10px;
+        font-size: 16px;
+        margin: 0px;
+        
+    }
+
+    .sectionMateriel .col {/* Définit la largeur de chaque colonne à 100% */
+        flex: 0 0 100%; /* Définit la largeur de chaque colonne à 100% */
+        max-width: 100%; 
+        margin-top:10px;
+      }
+
+    .sectionChoix .col {
+        flex: 0 0 100%; /* Définit la largeur de chaque colonne à 100% */
+        max-width: 100%; 
+        margin-top: 5px;
+    }
+
+    .sectionDuree {
+        height: 11vh;
+    }
+
+    .divBtn .col {
+        flex: 0 0 100%; /* Définit la largeur de chaque colonne à 100% */
+    }
+
+    .container {
+        max-width: 960px; /* Limite la largeur maximale du conteneur */
+    }
+
+    .sectionDuree .row {/* Définit la largeur de chaque colonne à 100% */
+        flex: 0 0 100%; /* Définit la largeur de chaque colonne à 100% */
+        max-width: 100%; 
+        margin-top: 20px;
+      }
+
+    #duree {
+        width: auto;
+        margin-top: 20px;
+    }
+
+    span {
+        color: rgb(255, 60, 60);
+        font-weight: 300;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+
+    div .heure {
+        margin-top: 0px;
+        text-align: left;
+    }
+
+    .divBtn .row>* {
+        width: 20%;
+        text-align: right;
+    }
+
+    .sectionImage {
+        height: 40vh;
+    }
+    
+
+}
+
+@media (max-height : 1000px) { 
+
+    .sectionMateriel {
+        height: 25vh;
+        border-radius: 10px;
+        font-size: 16px;
+        margin: 20px;
+        
+    }
+
+
+    .sectionChoix .col {
+        flex: 0 0 100%; /* Définit la largeur de chaque colonne à 100% */
+        max-width: 100%; 
+        margin-top: 5px;
+        
+    }
+
+    .sectionChoix .col {
+        height: 10vh;
+    }
+
+    .sectionChoix {
+        height: 25vh;
+    }
+
+    .sectionDuree {
+        height: 17vh;
+    }
+
+    .sectionDescription {
+        height: 50vh;
+    }
+
+    .sectionImage {
+        height: 45vh;
+    }
+
+    span {
+        color: rgb(255, 60, 60);
+        font-weight: 300;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+}
+
+
+@media (max-width: 360px) { 
+
+    body {
+        overflow-x: hidden;
+    }
+
+div .heure {
+    font-size: 14px;
+}
+
+.divBtn .row>* {
+    width: 29%;
+    text-align: right;
+
+}
+
+.sectionChoix .col {
+    flex: 0 0 100%; 
+    max-width: 10%; 
+    margin-top: 5px;
+    
+}
+
+}
+
+
+#calendarIcon {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 1px solid #ced4da;
+  }
+  
+  /* Styles pour le champ de date */
+  #dateDebut , #dateFin {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: auto;
+  }
+
+  #duree {
+    width: auto;
+  }
+
+div .heure {
+    margin-top: 10px;
+    text-align: left;
+}
+
+div .inputTime {
+    margin-left: 8px;
+}
+
+
+legend {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width:inherit; /* Or auto */
+    padding:0 10px; 
+    border-bottom:1px solid black;
+    margin-top: 10px;
+}
+
+#zoneMateriel {
+    padding-top: 30px;
+}
+
+.progress {
+    margin-top: 20px;
+}

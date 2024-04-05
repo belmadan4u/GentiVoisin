@@ -1,0 +1,79 @@
+.footer{
+    border-top: 1px solid black;
+    height: 20rem;
+    z-index: 1;
+    &_logo{
+        @include backgroundImage("../img/logo/logoReduit.png");
+        background-size: contain;
+        height: 50%;
+        width: 100%;
+        &:hover{
+            animation: spin 0.5s ease-in-out 1;
+        }
+
+    }&_titre{
+        height: 15%;
+        width: 75%;
+        font-size: 2.5em;
+        font-weight: bold;
+        font-style: italic;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        & :nth-child(1),& :nth-child(3){
+            width: 33%;
+        }
+        & :nth-child(1){
+            border:2px solid $third;
+        }& :nth-child(3){
+            border:2px solid $secondary;
+        }
+    }&_navigation{
+        height: 20%;
+        width: 75%;
+        & :nth-child(n){
+            color: $colorTexte;
+            text-decoration: none;
+            text-align: center;
+        }
+    }
+}
+
+//TABLETTE-V1
+@media only screen and (min-width: 1000px) and (max-width: 1350px) {
+    .footer{
+        &_navigation{
+            font-size: 0.8em;
+        }
+    }
+}
+
+
+// MOBILE 
+@media only screen and (max-width: 1000px) {
+    .footer{
+        height: auto;
+        &_logo{
+            @include backgroundImage("../img/logo/logoReduit.png");
+            background-size: contain;
+            height: 10rem;
+            width: 100%;
+            margin-top: 1rem;
+        }&_titre{
+            height: 4rem;
+            width: 90%;
+            font-size: 2.4em;
+            & :nth-child(1),& :nth-child(3){
+                width: 22%;
+            }
+        }&_navigation{
+            height: auto;
+            width: 90%;
+            flex-direction: column !important;
+            & :nth-child(n){
+                margin : 0.2rem 0 0.3rem 0;
+            }
+        }
+    }
+}
+
+
+

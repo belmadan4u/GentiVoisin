@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Connexion</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/connexion.css">
+</head>
+<body>
+    <div class="wrapper fadeInDown">
+      
+        <div id="formContent">
+
+          <div class="#formCo">
+            <h2 id="SeCo" class="active"> Se connecter </h2>
+            <h2 id="Sinscrire" class="inactive underlineHover"> S'inscrire </h2>
+            
+            <div class="fadeIn first">
+              <img src="./img/user.png" id="icon" alt="user Icon" />
+            </div>
+
+            <form id="formulaireCo">
+              <input type="text" id="login" class="fadeIn second" name="login" placeholder="Mail ou Telephone">
+              <input type="password" id="password" class="fadeIn third" name="password" placeholder="Mot de passe">
+              <input type="submit" class="fadeIn fourth" value="Se connecter">
+            </form>
+          </div>
+
+
+          <form id="formulaireInscription" >
+            <div>
+              <!-- Nom -->
+              <label for="nom">Nom :</label>
+              <input type="text" id="nom" name="nom" required><br>
+          
+              <!-- Prénom -->
+              <label for="prenom">Prénom :</label>
+              <input type="text" id="prenom" name="prenom" required><br>
+          
+              <!-- Adresse -->
+              <label for="adresse">Adresse :</label>
+              <input type="text" id="adresse" name="adresse" required><br>
+
+              <!-- Téléphone -->
+              <label for="telephone">Téléphone :</label>
+              <input type="tel" id="telephone" name="telephone" required><br>
+            </div>
+
+            <div class="colonne">
+              <!-- Email -->
+              <label for="email">Email :</label>
+              <input type="email" id="email" name="email" required><br>
+          
+              <!-- Mot de passe -->
+              <label for="motDePasse">Mot de passe :</label>
+              <input type="password" id="motDePasse" name="motDePasse" required><br>
+              
+              <!-- Confirmer Mot de passe -->
+              <label for="motDePasse2">Confirmez votre mot de passe :</label>
+              <input type="password" id="motDePasse2" name="motDePasse" required><br>
+
+              <!-- Rayon de déplacement -->
+              <label for="rayonDeplacement">Rayon de déplacement (en km) :</label>
+              <input type="number" id="rayonDeplacement" name="rayonDeplacement" min="5" max="50" required><br>
+            </div>
+
+            <input type="submit" value="Valider">
+        </form>
+      
+          <!-- Remind Passowrd -->
+          <div id="formFooter">
+            <a href="#">Mot de passe oublié ?</a>
+          </div>
+      
+        </div>
+      </div>
+</body>
+<script src="./js/connexion.js"></script>
+
+</html>

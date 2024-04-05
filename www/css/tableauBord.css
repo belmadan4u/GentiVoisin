@@ -1,0 +1,16 @@
+.bordure:hover {
+  border: 1px solid rgb(82, 82, 82);
+  transition: 0.5s;
+}
+
+.bordure {
+  border: 1px solid white;
+}
+
+#nbJetons {
+  color: green;
+}
+
+#divAdmin {
+  display: none;
+}

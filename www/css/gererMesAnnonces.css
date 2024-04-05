@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* vert foncé : #398047
+   vert clair : #93BF66
+   gris       : #B2C9CA
+   jaune clair: #F9E4AA
+   jaune foncé: #EBC542
+*/
+#container-Service,
+#container-Materiel{
+  margin-left: 17.5%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.title-container {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 44px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 40px 8px 10px 8px;
+  color: #EBC542;
+  cursor: pointer;
+}
+
+
+h2.inactive {
+  color: #cccccc;
+}
+
+h2.active {
+  color: #0d0d0d;
+  border-bottom: 2px solid #EBC542;
+}
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #EBC542;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #0d0d0d;
+}
+
+.underlineHover:hover:after{
+  width: 100%;
+}
+
+#labelSelectPrestation {
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin-left: 5%;
+}
+#selectPrestation {
+  margin-bottom: 2%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+  appearance: none; /* Supprime les styles par défaut du navigateur */
+}
+
+#selectPrestation:hover {
+  border-color: #666;
+}
+
+#selectPrestation:focus {
+  border-color: #93BF66;
+}
+
+#selectPrestation option {
+  font-size: 14px;
+}
+
+#selectPrestation option:checked {
+  background-color: #93BF66;
+  color: #fff;
+}
+
+/* Style des options au survol */
+#selectPrestation option:hover {
+  background-color: #f0f0f0;
+}
+
+.premierEnfantCard{
+  font-family: Poppins, Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  width: 80%;
+  height: 200px;
+  border: 1px solid black; 
+  border-radius: 12px; 
+  overflow: hidden;
+}
+
+.imgCard{
+  object-fit: cover; 
+  width: 100%; 
+  height: 100%; 
+  flex: 1;
+}
+
+.deuxiemeEnfantCard{
+  padding: 10px 15px; 
+  display: flex; 
+  justify-content: space-between; 
+  flex-direction: column;
+  width: 100%; 
+  flex: 4;
+}
+
+.premierPetitEnfantCard{
+  font-weight: bold; 
+  font-size: 16px;
+}
+
+.arrierePetitEnfantCard{
+  font-weight:normal;
+}
+
+.deuxiemePetitEnfantCard{
+  height: fit-content; 
+  font-size: 10px; 
+  color: gray; 
+  display: flex;
+  width:100%; 
+  justify-content: space-between; 
+  flex-direction: row;
+  align-items: end;
+}
+
+.troisiemePetitEnfantCard{
+  height: fit-content;
+}
+
+.btnTroisiemePetitEnfantCard{
+  background-color: rgba(0,0,0,0);
+  width: 25px; 
+  height: 25px; 
+  border: 0; 
+  padding: 0;
+}
+
+.btn-modif,
+.btn-supprimer, 
+.btn-desarchiver {
+  cursor: pointer;
+  object-fit: cover;
+  width:25px;
+}
+
+.btn-supprimer:hover,
+.btn-modif:hover,
+.btn-desarchiver:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+h1{
+  font-family: Poppins, Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #0d0d0d;
+  text-align: center;
+  margin-right: 23%;
+}

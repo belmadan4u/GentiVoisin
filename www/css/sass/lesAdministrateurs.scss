@@ -1,0 +1,48 @@
+.lesAdmins{
+    &_titre{
+        width: 100%;
+        border-bottom:2px solid black;
+        & input{
+            font-size: 0.6em;
+            border-radius: 10px;
+            border: 1px solid lightgray;
+            width: 20rem;
+            padding-left: 1rem;
+        }
+    }&_contenu{
+        
+        height: 40vh;
+        overflow-y: scroll;
+        &_unCompte{
+            border-bottom:1px solid black;
+            height: 1.5rem;
+            &:hover{
+                background-color: #09551826;
+            }
+            &_gauche{
+                & span{
+                    margin-left: 1rem
+                }
+                &_img{
+                    @include backgroundImage("../img/univers/noImage.png");
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    background-size: cover;
+                    border-radius: 50%
+                }
+            }&_croix{
+                @include backgroundImage("../img/icon/close-6.png");
+                height: 1rem;
+                width: 1rem;
+                background-size: cover;
+                cursor: pointer;
+            }&_ajouter{
+                @include backgroundImage("../img/icon/add.png");
+                height: 1rem;
+                width: 1rem;
+                background-size: cover;
+                cursor: pointer;
+            }
+        }
+    }
+}

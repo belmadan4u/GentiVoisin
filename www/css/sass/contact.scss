@@ -1,0 +1,32 @@
+.contact{
+    &_defillement{
+        width: 90%;
+        height: 17vh;
+        margin: 4rem 5% 2rem 5%;
+        border-top:1.5px solid rgb(0, 0, 0);
+        border-bottom:1.5px solid rgb(0, 0, 0);
+        display: flex;
+        align-items: center;
+        overflow: visible;
+        &_animation{
+            height: 50%;
+            width: 100rem;
+            font-size: 3.5em;
+            white-space: nowrap;
+            animation: defiler 15s linear infinite;
+        }
+    }
+}
+
+@keyframes defiler {
+    0%{
+        transform:translateX(90%);
+    }
+    95%{
+        transform:translateX(-192%);
+    }
+    100%{
+        transform:translateX(-190%);
+    }
+    
+}
